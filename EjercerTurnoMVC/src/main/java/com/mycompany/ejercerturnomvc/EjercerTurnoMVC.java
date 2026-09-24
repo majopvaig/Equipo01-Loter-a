@@ -4,6 +4,13 @@
 
 package com.mycompany.ejercerturnomvc;
 
+import controlador.ControlTablero;
+import fachada.FachadaLoteria;
+import interfaz.ILoteria;
+import modelo.ModeloTablero;
+import red.ManejadorSocket;
+import vista.VistaTablero;
+
 /**
  *
  * @author maria
@@ -11,6 +18,11 @@ package com.mycompany.ejercerturnomvc;
 public class EjercerTurnoMVC {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        ILoteria fachada = new FachadaLoteria();
+        ModeloTablero modelo = new ModeloTablero(fachada, "Ash Lynx");
+        ControlTablero control = new ControlTablero(modelo);
+        ManejadorSocket red = new ManejadorSocket(control);
+        VistaTablero vista = new VistaTablero(modelo, control, red);
+        vista.iniciar();
     }
 }

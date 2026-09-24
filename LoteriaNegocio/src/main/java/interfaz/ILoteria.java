@@ -6,6 +6,7 @@ package interfaz;
 
 import dominio.Accion;
 import dominio.Casilla;
+import dominio.Tarjeta;
 
 /**
  *
@@ -13,8 +14,8 @@ import dominio.Casilla;
  */
 public interface ILoteria {
     
-    boolean marcarCasilla(Casilla casilla);
-    
-    boolean reclamarPuntaje(Accion accion);
+    boolean marcarCasilla(Casilla casilla, Tarjeta tarjetaActual);
+
+    boolean reclamarPuntaje(Accion accion, boolean[][] marcadas);
     
 }

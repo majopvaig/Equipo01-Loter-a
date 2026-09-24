@@ -55,4 +55,8 @@ public class ControlTablero {
     public void reclamarPuntaje(Accion accion) {
         modelo.reclamarPuntaje(accion);
     }
+    
+    public void tickTemporizador(int segundos) {
+        modelo.setSegundosRestantes(segundos);
+    }
 }
