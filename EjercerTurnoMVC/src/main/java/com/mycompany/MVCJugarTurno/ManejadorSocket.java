@@ -2,9 +2,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package red;
+package com.mycompany.MVCJugarTurno;
 
-import controlador.ControlTablero;
 import dominio.Casilla;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +11,6 @@ import java.util.Random;
 import java.util.concurrent.CopyOnWriteArrayList;
 import javax.swing.SwingUtilities;
 import javax.swing.Timer;
-import objetosPresentacion.RepresentacionJugador;
 
 
 /**

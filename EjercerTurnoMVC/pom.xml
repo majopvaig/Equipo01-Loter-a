@@ -22,6 +22,6 @@
     </dependencies>
     <properties>
         <maven.compiler.release>25</maven.compiler.release>
-        <exec.mainClass>com.mycompany.ejercerturnomvc.EjercerTurnoMVC</exec.mainClass>
+        <exec.mainClass>com.mycompany.MVCJugarTurno.EjercerTurnoMVC</exec.mainClass>
     </properties>
 </project>

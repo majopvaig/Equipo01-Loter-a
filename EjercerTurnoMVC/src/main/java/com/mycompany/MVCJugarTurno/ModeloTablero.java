@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package modelo;
+package com.mycompany.MVCJugarTurno;
 
 import dominio.Accion;
 import dominio.Casilla;
@@ -30,6 +30,7 @@ public class ModeloTablero implements IModeloTablero {
     private Tarjeta tarjetaActual;
     private String error = "";
     private Integer puntajeAcumulado = 0;
+    // Mandarlo a negocio
     private int indiceMazo = 0;
     private int segundosRestantes = 5;
     
@@ -52,12 +53,12 @@ public class ModeloTablero implements IModeloTablero {
         );
     }
 
-    @Override
+
     public void suscribir(IObserverTablero observador) {
         observadores.add(observador);
     }
 
-    @Override
+
     public void gritarTarjeta() {
         if (indiceMazo >= mazoGriton.size()) {
             indiceMazo = 0;
@@ -73,7 +74,7 @@ public class ModeloTablero implements IModeloTablero {
         return tarjetaActual;
     }
 
-    @Override
+
     public void marcarCasilla(Casilla casilla) {
         if (fachada.marcarCasilla(casilla, tarjetaActual)) {
             casilla.setMarcada(true);
@@ -84,7 +85,7 @@ public class ModeloTablero implements IModeloTablero {
         notificarSubs();
     }
 
-    @Override
+
     public void reclamarPuntaje(Accion accion) {
         Accion real = encontrarAccion(accion.getNombre());
         if (real == null) {
@@ -149,13 +150,11 @@ public class ModeloTablero implements IModeloTablero {
         return segundosRestantes;
     }
 
-    @Override
     public void setSegundosRestantes(int segundos) {
         this.segundosRestantes = segundos;
         notificarSubs();
     }
 
-    @Override
     public void notificarSubs() {
         for (IObserverTablero obs : observadores) {
             obs.update(this);

@@ -2,14 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
 
-package com.mycompany.ejercerturnomvc;
+package com.mycompany.MVCJugarTurno;
 
-import controlador.ControlTablero;
 import fachada.FachadaLoteria;
 import interfaz.ILoteria;
-import modelo.ModeloTablero;
-import red.ManejadorSocket;
-import vista.VistaTablero;
 
 /**
  *

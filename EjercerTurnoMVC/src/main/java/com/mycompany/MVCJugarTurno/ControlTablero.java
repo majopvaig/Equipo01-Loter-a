@@ -2,11 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package controlador;
+package com.mycompany.MVCJugarTurno;
 
 import dominio.Accion;
 import dominio.Casilla;
-import modelo.IModeloTablero;
 
 /**
  * Contralor (MVC) del tablero de la lotería.
