@@ -4,7 +4,8 @@
  */
 package controlador;
 
-import modelo.Casilla;
+import dominio.Accion;
+import dominio.Casilla;
 import modelo.IModeloTablero;
 
 /**
@@ -51,7 +52,7 @@ public class ControlTablero {
     /**
      * Reclama el puntaje presionado por el jugador.
      */
-    public void reclamarPuntaje() {
-        modelo.reclamarPuntaje();
+    public void reclamarPuntaje(Accion accion) {
+        modelo.reclamarPuntaje(accion);
     }
 }

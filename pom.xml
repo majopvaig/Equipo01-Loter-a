@@ -7,6 +7,8 @@
     <packaging>pom</packaging>
     <modules>
         <module>EjercerTurnoMVC</module>
+        <module>DominioMock</module>
+        <module>LoteriaNegocio</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

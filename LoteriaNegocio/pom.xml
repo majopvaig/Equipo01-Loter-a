@@ -6,7 +6,7 @@
         <artifactId>Loteria</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-    <artifactId>EjercerTurnoMVC</artifactId>
+    <artifactId>LoteriaNegocio</artifactId>
     <packaging>jar</packaging>
     <dependencies>
         <dependency>
@@ -14,14 +14,9 @@
             <artifactId>DominioMock</artifactId>
             <version>${project.version}</version>
         </dependency>
-        <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>LoteriaNegocio</artifactId>
-            <version>${project.version}</version>
-        </dependency>
     </dependencies>
     <properties>
         <maven.compiler.release>25</maven.compiler.release>
-        <exec.mainClass>com.mycompany.ejercerturnomvc.EjercerTurnoMVC</exec.mainClass>
+        <exec.mainClass>interfaz.LoteriaNegocio</exec.mainClass>
     </properties>
 </project>
