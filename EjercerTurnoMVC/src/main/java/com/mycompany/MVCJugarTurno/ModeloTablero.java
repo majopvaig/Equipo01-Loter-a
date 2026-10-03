@@ -5,6 +5,7 @@
 package com.mycompany.MVCJugarTurno;
 
 import dominio.Accion;
+import dominio.Carta;
 import dominio.Casilla;
 import dominio.CatalogoLoteria;
 import dominio.Jugador;
@@ -53,28 +54,14 @@ public class ModeloTablero implements IModeloTablero {
         );
     }
 
-
-    public void suscribir(IObserverTablero observador) {
-        observadores.add(observador);
-    }
-
-
-    public void gritarTarjeta() {
-        if (indiceMazo >= mazoGriton.size()) {
-            indiceMazo = 0;
-        }
-        tarjetaActual = mazoGriton.get(indiceMazo++);
-        error = "";
-        segundosRestantes = 5;
-        notificarSubs();
-    }
-
+    
     @Override
     public Tarjeta getTarjetaActual() {
         return tarjetaActual;
     }
 
 
+    @Override
     public void marcarCasilla(Casilla casilla) {
         if (fachada.marcarCasilla(casilla, tarjetaActual)) {
             casilla.setMarcada(true);
@@ -85,7 +72,12 @@ public class ModeloTablero implements IModeloTablero {
         notificarSubs();
     }
 
+    @Override
+    public void obtenerCarta() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
 
+    @Override
     public void reclamarPuntaje(Accion accion) {
         Accion real = encontrarAccion(accion.getNombre());
         if (real == null) {
@@ -115,6 +107,24 @@ public class ModeloTablero implements IModeloTablero {
     public Integer consultarPuntaje() {
         return puntajeAcumulado;
     }
+    
+    @Override
+    public void suscribir(IObserverTablero observador) {
+        observadores.add(observador);
+    }
+
+
+    @Override
+    public void gritarTarjeta() {
+        if (indiceMazo >= mazoGriton.size()) {
+            indiceMazo = 0;
+        }
+        tarjetaActual = mazoGriton.get(indiceMazo++);
+        error = "";
+        segundosRestantes = 5;
+        notificarSubs();
+    }
+
 
     @Override
     public List<Casilla> getCasillas() {
@@ -150,11 +160,13 @@ public class ModeloTablero implements IModeloTablero {
         return segundosRestantes;
     }
 
+    @Override
     public void setSegundosRestantes(int segundos) {
         this.segundosRestantes = segundos;
         notificarSubs();
     }
 
+    @Override
     public void notificarSubs() {
         for (IObserverTablero obs : observadores) {
             obs.update(this);
