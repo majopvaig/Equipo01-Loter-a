@@ -60,8 +60,6 @@ public class ModeloTablero implements IModeloTablero {
         return tarjetaActual;
     }
 
-
-    @Override
     public void marcarCasilla(Casilla casilla) {
         if (fachada.marcarCasilla(casilla, tarjetaActual)) {
             casilla.setMarcada(true);
@@ -72,12 +70,10 @@ public class ModeloTablero implements IModeloTablero {
         notificarSubs();
     }
 
-    @Override
     public void obtenerCarta() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
-    @Override
     public void reclamarPuntaje(Accion accion) {
         Accion real = encontrarAccion(accion.getNombre());
         if (real == null) {
@@ -113,8 +109,6 @@ public class ModeloTablero implements IModeloTablero {
         observadores.add(observador);
     }
 
-
-    @Override
     public void gritarTarjeta() {
         if (indiceMazo >= mazoGriton.size()) {
             indiceMazo = 0;
@@ -124,7 +118,6 @@ public class ModeloTablero implements IModeloTablero {
         segundosRestantes = 5;
         notificarSubs();
     }
-
 
     @Override
     public List<Casilla> getCasillas() {
@@ -160,13 +153,11 @@ public class ModeloTablero implements IModeloTablero {
         return segundosRestantes;
     }
 
-    @Override
     public void setSegundosRestantes(int segundos) {
         this.segundosRestantes = segundos;
         notificarSubs();
     }
 
-    @Override
     public void notificarSubs() {
         for (IObserverTablero obs : observadores) {
             obs.update(this);

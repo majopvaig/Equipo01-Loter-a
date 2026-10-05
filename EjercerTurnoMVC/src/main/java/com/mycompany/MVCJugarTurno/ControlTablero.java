@@ -20,14 +20,14 @@ public class ControlTablero {
     /**
      * Modelo del tablero.
      */
-    private final IModeloTablero modelo;
+    private final ModeloTablero modelo;
 
     /**
      * Crea el controlador con el modelo del tablero.
      *
      * @param modelo modelo del tablero (implementación de {@code IModeloTablero})
      */
-    public ControlTablero(IModeloTablero modelo) {
+    public ControlTablero(ModeloTablero modelo) {
         this.modelo = modelo;
     }
 
